@@ -21,16 +21,15 @@
     .lang-btn.active { background: var(--ink); color: #fff; }
     .nav-cta { background: var(--ink); color: var(--warm-white); padding: 10px 24px; border-radius: 100px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }
     .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; gap: 40px; }
-    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 50% at 80% 30%, rgba(194,97,12,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, rgba(194,97,12,0.05) 0%, transparent 60%); }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 140px 60px 100px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 50% at 85% 20%, rgba(194,97,12,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 5% 80%, rgba(194,97,12,0.05) 0%, transparent 60%); }
     .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(var(--border-soft) 1px, transparent 1px), linear-gradient(90deg, var(--border-soft) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%); opacity: 0.5; }
-    .hero-inner { position: relative; z-index: 1; }
-    .hero-visual { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); border: 1px solid rgba(194,97,12,0.2); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
     .hero-tag::before { content:''; width:6px; height:6px; background:var(--accent); border-radius:50%; }
-    h1 { font-family: 'Fraunces', serif; font-size: clamp(40px,5vw,68px); font-weight: 300; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards; }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(48px,6.5vw,88px); font-weight: 300; line-height: 1.06; letter-spacing: -2px; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards; }
     h1 em { font-style: italic; color: var(--accent); }
-    .hero-sub { font-size: 17px; font-weight: 300; color: var(--ink-soft); line-height: 1.65; max-width: 460px; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.7s ease 0.35s forwards; }
+    .hero-sub { font-size: 18px; font-weight: 300; color: var(--ink-soft); line-height: 1.65; max-width: 540px; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.7s ease 0.35s forwards; }
     .hero-actions { display: flex; align-items: center; gap: 16px; opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards; }
     .btn-primary { background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(194,97,12,0.25); }
     .btn-primary:hover { background: #A8520A; transform: translateY(-2px); }
@@ -91,21 +90,10 @@
     @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
     .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity:1; transform:none; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-    @keyframes pulse-ring { 0%,100%{opacity:0.15} 50%{opacity:0.35} }
-    @keyframes thread { to{stroke-dashoffset:-40} }
-    .f1 { animation: float 4s ease-in-out infinite; }
-    .f2 { animation: float2 5s ease-in-out 0.8s infinite; }
-    .f3 { animation: float2 3.5s ease-in-out 1.5s infinite; }
-    .f4 { animation: float 4.5s ease-in-out 1s infinite; }
-    .pr { animation: pulse-ring 3s ease-in-out infinite; }
-    .pr2 { animation: pulse-ring 3s ease-in-out 1s infinite; }
-    .th { stroke-dasharray:6 4; animation: thread 2s linear infinite; }
+
     @media (max-width: 900px) {
       nav { padding: 14px 20px; }
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
-      .hero-visual { display: none; }
+      .hero { padding: 100px 24px 60px; }
       h1 { font-size: 38px; }
       .hero-stats { gap: 20px; flex-wrap: wrap; }
       .services, .how, .contact { padding: 64px 24px; }
@@ -124,16 +112,13 @@
 <body>
 
 <nav>
-  <svg width="148" height="32" viewBox="0 0 148 32" fill="none">
-    <line x1="6" y1="4" x2="6" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="11" y1="4" x2="11" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="16" y1="4" x2="16" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 10 Q6 8 9 10 Q12 12 15 10 Q17 9 19 10" stroke="#1C1917" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M3 16 Q6 14 9 16 Q12 18 15 16 Q17 15 19 16" stroke="#1C1917" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M3 22 Q6 20 9 22 Q12 24 15 22 Q17 21 19 22" stroke="#1C1917" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <rect x="14" y="13.5" width="8" height="5" rx="2.5" fill="#C2610C"/>
-    <text x="28" y="22" font-family="'Fraunces', Georgia, serif" font-size="18" font-weight="400" fill="#1C1917" letter-spacing="-0.3">Loom</text>
-    <text x="78" y="22" font-family="'Fraunces', Georgia, serif" font-size="18" font-weight="400" fill="#C2610C" letter-spacing="-0.3">People</text>
+  <svg width="180" height="32" viewBox="0 0 180 32" fill="none">
+    <!-- L shape -->
+    <path d="M6 4 L6 26 Q6 30 10 30 L24 30" stroke="#1C1917" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Dot -->
+    <circle cx="24" cy="8" r="5" fill="#C2610C"/>
+    <!-- Wordmark -->
+    <text x="36" y="22" font-family="'Fraunces', Georgia, serif" font-size="18" font-weight="400" fill="#1C1917" letter-spacing="-0.3">Loom<tspan fill="#C2610C">People</tspan></text>
   </svg>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -160,77 +145,6 @@
       <div><div class="stat-num">4+</div><div class="stat-label" data-tr="Proje Paketi" data-en="Project Packages">Proje Paketi</div></div>
       <div><div class="stat-num">Seed→A</div><div class="stat-label" data-tr="Hedef Aşama" data-en="Target Stage">Hedef Aşama</div></div>
     </div>
-  </div>
-  <div class="hero-visual">
-    <svg width="420" height="460" viewBox="0 0 420 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="210" cy="230" r="170" stroke="#E7E0D8" stroke-width="1" stroke-dasharray="4 8" class="pr"/>
-      <circle cx="210" cy="230" r="130" stroke="#E7E0D8" stroke-width="1" stroke-dasharray="3 6" class="pr2"/>
-      <g class="f1">
-        <rect x="145" y="165" width="130" height="130" rx="16" fill="#F7F3EE" stroke="#E7E0D8" stroke-width="1.5"/>
-        <line x1="168" y1="178" x2="168" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="185" y1="178" x2="185" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="202" y1="178" x2="202" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="219" y1="178" x2="219" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="236" y1="178" x2="236" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="253" y1="178" x2="253" y2="282" stroke="#E7E0D8" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M155 200 Q168 196 185 200 Q202 204 219 200 Q236 196 253 200 Q262 202 268 200" stroke="#C2610C" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
-        <path d="M155 215 Q168 219 185 215 Q202 211 219 215 Q236 219 253 215 Q262 213 268 215" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-        <path d="M155 230 Q168 226 185 230 Q202 234 219 230 Q236 226 253 230 Q262 232 268 230" stroke="#F97316" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9"/>
-        <path d="M155 245 Q168 249 185 245 Q202 241 219 245 Q236 249 253 245 Q262 243 268 245" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-        <path d="M155 260 Q168 256 185 260 Q202 264 219 260 Q236 256 253 260 Q262 262 268 260" stroke="#C2610C" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
-        <rect x="222" y="222" width="30" height="11" rx="5.5" fill="#C2610C"/>
-        <circle cx="228" cy="227.5" r="2" fill="white" opacity="0.7"/>
-      </g>
-      <g class="f2">
-        <rect x="42" y="100" width="104" height="64" rx="12" fill="white" stroke="#E7E0D8" stroke-width="1"/>
-        <circle cx="64" cy="124" r="13" fill="#FEF3E2" stroke="#E7E0D8" stroke-width="1"/>
-        <circle cx="60" cy="120" r="5" fill="#C2610C" opacity="0.7"/>
-        <path d="M52 131 Q60 126 68 131" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <circle cx="94" cy="124" r="13" fill="#FEF3E2" stroke="#E7E0D8" stroke-width="1"/>
-        <circle cx="90" cy="120" r="5" fill="#F97316" opacity="0.7"/>
-        <path d="M82 131 Q90 126 98 131" stroke="#F97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <circle cx="124" cy="124" r="13" fill="#FEF3E2" stroke="#E7E0D8" stroke-width="1"/>
-        <circle cx="120" cy="120" r="5" fill="#C2610C" opacity="0.5"/>
-        <path d="M112 131 Q120 126 128 131" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
-        <text x="94" y="154" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#78716C" font-weight="500">Ekip Kurulumu</text>
-      </g>
-      <g class="f3">
-        <rect x="278" y="88" width="108" height="72" rx="12" fill="white" stroke="#E7E0D8" stroke-width="1"/>
-        <rect x="294" y="138" width="12" height="16" rx="3" fill="#FEF3E2"/>
-        <rect x="312" y="128" width="12" height="26" rx="3" fill="#E7D0BE"/>
-        <rect x="330" y="116" width="12" height="38" rx="3" fill="#C2610C" opacity="0.7"/>
-        <rect x="348" y="106" width="12" height="48" rx="3" fill="#C2610C"/>
-        <path d="M300 136 L318 126 L336 114 L354 104" stroke="#F97316" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <circle cx="354" cy="104" r="3" fill="#F97316"/>
-        <text x="332" y="168" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#78716C" font-weight="500">Büyüme</text>
-      </g>
-      <g class="f4">
-        <rect x="38" y="306" width="108" height="68" rx="12" fill="white" stroke="#E7E0D8" stroke-width="1"/>
-        <circle cx="58" cy="325" r="6" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.2"/>
-        <path d="M54.5 325 L57 327.5 L61.5 322" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <rect x="70" y="322" width="52" height="6" rx="3" fill="#F0EAE2"/>
-        <circle cx="58" cy="341" r="6" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.2"/>
-        <path d="M54.5 341 L57 343.5 L61.5 338" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <rect x="70" y="338" width="42" height="6" rx="3" fill="#F0EAE2"/>
-        <circle cx="58" cy="357" r="6" fill="#F0EAE2" stroke="#E7E0D8" stroke-width="1.2"/>
-        <rect x="70" y="354" width="50" height="6" rx="3" fill="#F0EAE2"/>
-        <text x="92" y="364" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#78716C" font-weight="500">İK Check-Up</text>
-      </g>
-      <g class="f2" style="animation-delay:1s">
-        <rect x="278" y="318" width="108" height="72" rx="12" fill="white" stroke="#E7E0D8" stroke-width="1"/>
-        <ellipse cx="310" cy="355" rx="18" ry="6" fill="#FEF3E2" stroke="#C2610C" stroke-width="1"/>
-        <ellipse cx="310" cy="349" rx="18" ry="6" fill="#FEF3E2" stroke="#C2610C" stroke-width="1"/>
-        <ellipse cx="310" cy="343" rx="18" ry="6" fill="#FEF3E2" stroke="#C2610C" stroke-width="1"/>
-        <text x="310" y="346" text-anchor="middle" font-size="8" fill="#C2610C" font-family="DM Sans,sans-serif" font-weight="500">TL</text>
-        <path d="M336 356 L350 340" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <path d="M344 340 L350 340 L350 346" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <text x="332" y="378" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#78716C" font-weight="500">Ücret Yapısı</text>
-      </g>
-      <path d="M142 164 Q100 150 92 164" stroke="#C2610C" stroke-width="1" fill="none" opacity="0.2" class="th"/>
-      <path d="M275 188 Q290 155 286 152" stroke="#C2610C" stroke-width="1" fill="none" opacity="0.2" class="th"/>
-      <path d="M145 270 Q95 290 92 306" stroke="#C2610C" stroke-width="1" fill="none" opacity="0.2" class="th"/>
-      <path d="M275 272 Q300 295 286 318" stroke="#C2610C" stroke-width="1" fill="none" opacity="0.2" class="th"/>
-    </svg>
   </div>
 </section>
 
@@ -322,7 +236,7 @@
       <h2 class="section-title" data-tr="Hadi bir<br>görüşelim." data-en="Let's have<br>a conversation.">Hadi bir<br>görüşelim.</h2>
       <p class="contact-sub" data-tr="Startup'ınızın İK ihtiyaçlarını konuşmak için 30 dakikanızı ayırın. Ücretsiz keşif görüşmesinde ne yapabileceğimizi birlikte değerlendirelim." data-en="Set aside 30 minutes to talk about your startup's HR needs. Let's explore what we can build together in a free discovery call.">Startup'ınızın İK ihtiyaçlarını konuşmak için 30 dakikanızı ayırın. Ücretsiz keşif görüşmesinde ne yapabileceğimizi birlikte değerlendirelim.</p>
       <div class="contact-detail"><span>📍</span><span><strong>İstanbul, Türkiye</strong> — <span data-tr="Remote çalışma mevcut" data-en="Remote available">Remote çalışma mevcut</span></span></div>
-      <div class="contact-detail"><span>📧</span><span><strong>hello@loompeople.co</strong></span></div>
+      <div class="contact-detail"><span>📧</span><span><strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84ece1e8e8ebc4e8ebebe9f4e1ebf4e8e1aae7eb">[email&#160;protected]</a></strong></span></div>
     </div>
     <div class="contact-right reveal">
       <div class="form-row">
@@ -350,23 +264,15 @@
 </section>
 
 <footer>
-  <svg width="120" height="26" viewBox="0 0 148 32" fill="none">
-    <g opacity="0.6">
-      <line x1="6" y1="4" x2="6" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="11" y1="4" x2="11" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="16" y1="4" x2="16" y2="28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M3 10 Q6 8 9 10 Q12 12 15 10 Q17 9 19 10" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <path d="M3 16 Q6 14 9 16 Q12 18 15 16 Q17 15 19 16" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <path d="M3 22 Q6 20 9 22 Q12 24 15 22 Q17 21 19 22" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <rect x="14" y="13.5" width="8" height="5" rx="2.5" fill="#C2610C"/>
-    </g>
-    <text x="28" y="22" font-family="'Fraunces',Georgia,serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="-0.3">Loom</text>
-    <text x="78" y="22" font-family="'Fraunces',Georgia,serif" font-size="18" font-weight="400" fill="#C2610C" letter-spacing="-0.3">People</text>
+  <svg width="180" height="32" viewBox="0 0 180 32" fill="none">
+    <path d="M6 4 L6 26 Q6 30 10 30 L24 30" stroke="rgba(255,255,255,0.5)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="24" cy="8" r="5" fill="#C2610C"/>
+    <text x="36" y="22" font-family="'Fraunces',Georgia,serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="-0.3">Loom<tspan fill="#C2610C">People</tspan></text>
   </svg>
   <div class="footer-copy" data-tr="© 2025 Loom People. Tüm hakları saklıdır." data-en="© 2025 Loom People. All rights reserved.">© 2025 Loom People. Tüm hakları saklıdır.</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   let currentLang='tr';
   function setLang(lang){
     currentLang=lang;
@@ -395,12 +301,4 @@
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
   },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-  function handleSubmit(btn){
-    btn.textContent=btn.getAttribute('data-'+currentLang+'-success');
-    btn.style.background='#16a34a';
-    btn.disabled=true;
-  }
-</script>
-</body>
-</html>
+  document.querySelectorAll(
