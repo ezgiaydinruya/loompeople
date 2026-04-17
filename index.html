@@ -1,113 +1,465 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loom People — Logo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #1C1917;
-      --accent: #C2610C;
-      --cream: #F7F3EE;
-      --warm-white: #FDFAF7;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--warm-white);
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 48px;
-      padding: 40px;
-    }
-    .logo {
-      display: inline-flex;
-      align-items: baseline;
-      font-family: 'Fraunces', Georgia, serif;
-    }
-    .logo .loom {
-      font-size: 22px;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      font-style: italic;
-    }
-    .logo .people {
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--accent);
-      margin-left: 4px;
-    }
-    .logo .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 9999px;
-      background: var(--accent);
-      margin-left: 3px;
-      margin-bottom: 4px;
-      align-self: flex-end;
-      display: inline-block;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loom People — Yeni Nesil HR Danışmanlık</title>
+<meta name="description" content="Start-up'lardan kurumsallaşma sürecindeki şirketlere kadar, ihtiyaca özel ve esnek HR çözümleri. Pratik, uygulanabilir, sürdürülebilir." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1917;
+    --ink-soft:#44403C;
+    --ink-muted:#78716C;
+    --primary:#C2610C;
+    --accent-mid:#E08A3C;
+    --accent-light:#FEF3E2;
+    --cream:#F7F3EE;
+    --warm-white:#FDFAF7;
+    --border:#E7E0D6;
+    --border-soft:#EFE9DF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--warm-white);
+    color:var(--ink);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .heading{font-family:'Fraunces',Georgia,serif;font-weight:300;letter-spacing:-0.02em}
+  em{font-style:italic;color:var(--primary)}
+  a{color:inherit;text-decoration:none}
+  .container{padding:0 24px}
+  @media(min-width:768px){.container{padding:0 60px}}
 
-    /* Light variant on dark surface */
-    .logo.light .loom { color: rgba(255,255,255,0.9); }
+  /* ========== LOGO ========== */
+  .logo{display:inline-flex;align-items:baseline;font-family:'Fraunces',Georgia,serif}
+  .logo .loom{font-size:22px;font-weight:300;letter-spacing:-0.02em;color:var(--ink);font-style:italic}
+  .logo .people{font-size:22px;font-weight:500;letter-spacing:-0.02em;color:var(--primary);margin-left:4px}
+  .logo .dot{width:4px;height:4px;border-radius:9999px;background:var(--primary);margin-left:3px;margin-bottom:4px;align-self:flex-end;display:inline-block}
+  .logo.light .loom{color:rgba(255,255,255,0.9)}
 
-    /* Larger display version */
-    .logo.xl .loom, .logo.xl .people { font-size: 56px; }
-    .logo.xl .dot { width: 9px; height: 9px; margin-left: 7px; margin-bottom: 10px; }
+  /* ========== NAV ========== */
+  nav.topbar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;height:60px;
+    background:rgba(253,250,247,0.9);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  @media(min-width:768px){nav.topbar{padding:0 60px}}
+  .nav-links{display:none;align-items:center;gap:12px}
+  @media(min-width:768px){.nav-links{display:flex}}
+  .nav-links a{font-size:13px;font-weight:500;color:var(--ink-muted);padding:8px 12px;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--ink);color:var(--warm-white);padding:10px 24px;border-radius:9999px;font-size:13px;font-weight:500;transition:all .2s}
+  .nav-cta:hover{background:var(--primary);transform:translateY(-1px)}
+  .nav-toggle{display:flex;background:none;border:none;cursor:pointer;color:var(--ink)}
+  @media(min-width:768px){.nav-toggle{display:none}}
+  .mobile-menu{display:none;position:absolute;top:60px;left:0;right:0;background:var(--warm-white);border-bottom:1px solid var(--border-soft);padding:24px}
+  .mobile-menu.open{display:block}
+  .mobile-menu a{display:block;padding:10px 0;font-size:16px;font-weight:500;color:var(--ink-muted)}
+  .mobile-menu .nav-cta{display:block;text-align:center;margin-top:12px;color:var(--warm-white)}
 
-    .card {
-      padding: 64px 80px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card.cream { background: var(--cream); }
-    .card.dark { background: var(--ink); }
-    .label {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(28,25,23,0.5);
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .group { display: flex; flex-direction: column; align-items: center; }
-  </style>
+  /* ========== HERO ========== */
+  .hero{
+    min-height:100vh;
+    display:grid;grid-template-columns:1fr;align-items:center;
+    padding:120px 24px 80px;position:relative;overflow:hidden;gap:40px;
+  }
+  @media(min-width:1024px){
+    .hero{grid-template-columns:1fr 1fr;padding:120px 60px 80px}
+  }
+  .hero-bg-1{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(194,97,12,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 10% 80%,rgba(194,97,12,0.05) 0%,transparent 60%)}
+  .hero-bg-2{position:absolute;inset:0;z-index:0;opacity:.5;background-image:linear-gradient(var(--border-soft) 1px,transparent 1px),linear-gradient(90deg,var(--border-soft) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%);mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%)}
+  .hero-content{position:relative;z-index:10}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);border:1px solid rgba(194,97,12,0.2);border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:28px}
+  .badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--primary)}
+  h1.hero-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(40px,5vw,68px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
+  .hero-desc{font-size:17px;font-weight:300;color:var(--ink-soft);line-height:1.6;max-width:460px;margin-bottom:40px}
+  .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn-primary{background:var(--primary);color:#fff;padding:14px 32px;border-radius:9999px;font-size:15px;font-weight:500;box-shadow:0 4px 20px rgba(194,97,12,0.25);transition:all .2s;border:none;cursor:pointer}
+  .btn-primary:hover{filter:brightness(.9);transform:translateY(-2px)}
+  .link-secondary{color:var(--ink-soft);font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+  .link-secondary:hover{color:var(--primary)}
+  .hero-stats{display:flex;gap:36px;margin-top:52px;padding-top:36px;border-top:1px solid var(--border)}
+  .stat-num{font-family:'Fraunces',Georgia,serif;font-size:28px;letter-spacing:-0.02em}
+  .stat-label{font-size:12px;color:var(--ink-muted);margin-top:2px}
+  .hero-visual{display:none;position:relative;z-index:10;align-items:center;justify-content:center}
+  @media(min-width:1024px){.hero-visual{display:flex}}
+  .visual-circle{width:380px;height:380px;border-radius:50%;background:linear-gradient(135deg,rgba(194,97,12,0.12),rgba(224,138,60,0.04));display:flex;align-items:center;justify-content:center;position:relative}
+  .visual-circle::before{content:'';position:absolute;inset:30px;border-radius:50%;border:1px dashed rgba(194,97,12,0.25)}
+  .visual-circle::after{content:'';position:absolute;inset:80px;border-radius:50%;border:1px solid rgba(194,97,12,0.18)}
+  .visual-core{position:relative;z-index:2;text-align:center;font-family:'Fraunces',Georgia,serif}
+  .visual-core .big{font-size:64px;font-weight:300;color:var(--primary);font-style:italic;line-height:1}
+  .visual-core .sub{font-size:13px;color:var(--ink-muted);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+
+  /* ========== SECTION COMMON ========== */
+  section{padding:100px 24px;border-top:1px solid var(--border)}
+  @media(min-width:768px){section{padding:100px 60px}}
+  .eyebrow{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+  h2.section-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;letter-spacing:-0.02em;line-height:1.15}
+
+  /* ========== SERVICES ========== */
+  #hizmetler{background:var(--cream)}
+  .services-head{display:flex;flex-direction:column;justify-content:space-between;margin-bottom:56px;gap:16px}
+  @media(min-width:768px){.services-head{flex-direction:row;align-items:flex-end}}
+  .services-head p{font-size:14px;color:var(--ink-muted);max-width:240px;line-height:1.6}
+  @media(min-width:768px){.services-head p{text-align:right}}
+  .tabs{display:flex;gap:8px;margin-bottom:28px}
+  .tab{padding:8px 20px;border-radius:9999px;border:1px solid var(--border);background:transparent;color:var(--ink-muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+  .tab:hover{background:var(--ink);color:var(--warm-white);border-color:var(--ink)}
+  .tab.active{background:var(--ink);color:var(--warm-white);border-color:var(--ink)}
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+  .card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:all .3s}
+  .card:hover{border-color:rgba(194,97,12,0.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.06)}
+  .card-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent-mid));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .card:hover .card-bar{transform:scaleX(1)}
+  .card-icon{width:44px;height:44px}
+  .card-title{font-family:'Fraunces',Georgia,serif;font-size:19px;letter-spacing:-0.02em;margin:16px 0 8px}
+  .card-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;font-weight:300}
+  .card-tag{display:inline-block;margin-top:14px;padding:4px 12px;background:var(--accent-light);color:var(--primary);border-radius:9999px;font-size:11px;font-weight:500}
+  .panel{display:none}
+  .panel.active{display:grid}
+
+  /* ========== PROCESS ========== */
+  .process-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:56px;position:relative}
+  @media(min-width:768px){.process-grid{grid-template-columns:repeat(3,1fr)}}
+  .process-line{display:none;position:absolute;top:28px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:1px;background:linear-gradient(90deg,var(--border),var(--primary),var(--border))}
+  @media(min-width:768px){.process-line{display:block}}
+  .step{margin-top:40px}
+  @media(min-width:768px){.step{margin-top:0;padding:0 32px}.step:first-child{padding-left:0}.step:last-child{padding-right:0}}
+  .step-num{width:56px;height:56px;background:var(--warm-white);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',Georgia,serif;font-size:20px;color:var(--primary);position:relative;z-index:10;margin-bottom:20px}
+  .step-title{font-family:'Fraunces',Georgia,serif;font-size:19px;letter-spacing:-0.02em;margin-bottom:8px}
+  .step-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;font-weight:300}
+
+  /* ========== ABOUT ========== */
+  #hakkimizda{background:var(--cream)}
+  .about-content{max-width:880px}
+  .about-content > p{font-size:15px;color:var(--ink-soft);line-height:1.7;font-weight:300;margin-bottom:24px}
+  .about-content strong{font-weight:400;color:var(--ink)}
+  .quote{margin-top:48px;padding:32px;border-radius:16px;background:var(--warm-white);border:1px solid var(--border)}
+  .quote p{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:300;line-height:1.35;letter-spacing:-0.02em}
+  .quote-author{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .quote-avatar{width:40px;height:40px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces',Georgia,serif;font-size:14px}
+
+  /* ========== CONTACT ========== */
+  #iletisim{background:var(--ink);position:relative;overflow:hidden;border-top:none}
+  #iletisim::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(194,97,12,0.15) 0%,transparent 70%)}
+  .contact-grid{position:relative;z-index:10;display:grid;grid-template-columns:1fr;gap:80px;align-items:flex-start}
+  @media(min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-mid);margin-bottom:12px}
+  .contact-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;letter-spacing:-0.02em;color:#fff}
+  .contact-desc{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;font-weight:300;margin-top:16px}
+  .contact-info{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;color:rgba(255,255,255,0.6)}
+  .contact-info strong{color:rgba(255,255,255,0.9);font-weight:400}
+  .form-row{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:12px}
+  @media(min-width:640px){.form-row.two{grid-template-columns:1fr 1fr}}
+  .form-label{display:block;font-size:11px;font-weight:500;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px}
+  .form-input,.form-select,.form-textarea{
+    width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;font-weight:300;
+    font-family:inherit;outline:none;transition:all .2s;
+  }
+  .form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,0.25)}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--primary);background:rgba(255,255,255,0.09)}
+  .form-textarea{resize:none}
+  .form-select option{background:var(--ink);color:#fff}
+  .submit-btn{width:100%;padding:16px;border-radius:10px;font-size:15px;font-weight:500;background:var(--primary);color:#fff;border:none;cursor:pointer;transition:all .2s;margin-top:4px;box-shadow:0 4px 20px rgba(194,97,12,0.3);font-family:inherit}
+  .submit-btn:hover{filter:brightness(.9);transform:translateY(-1px)}
+  .submit-btn.success{background:#16a34a}
+  .form-note{font-size:11px;color:rgba(255,255,255,0.25);text-align:center;margin-top:10px}
+
+  /* ========== FOOTER ========== */
+  footer{padding:24px;border-top:1px solid rgba(255,255,255,0.08);background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px}
+  @media(min-width:768px){footer{flex-direction:row;padding:24px 60px}}
+  footer .copy{font-size:12px;color:rgba(255,255,255,0.25)}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+</style>
 </head>
 <body>
-  <div class="group">
-    <div class="label">Primary — Cream Background</div>
-    <div class="card cream">
-      <div class="logo xl">
-        <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
+
+<!-- NAV -->
+<nav class="topbar">
+  <a href="#" class="logo">
+    <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
+  </a>
+  <div class="nav-links">
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#nasil">Nasıl Çalışır</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#iletisim">İletişim</a>
+    <a href="#iletisim" class="nav-cta">İletişime Geç</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#nasil">Nasıl Çalışır</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#iletisim">İletişim</a>
+    <a href="#iletisim" class="nav-cta">İletişime Geç</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="hero-bg-1"></div>
+  <div class="hero-bg-2"></div>
+  <div class="hero-content">
+    <div class="badge"><span class="dot"></span>Yeni Nesil HR Danışmanlık</div>
+    <h1 class="hero-title">Şirketinizin<br><em>insan dokusunu</em><br>birlikte kuralım.</h1>
+    <p class="hero-desc">Start-up'lardan kurumsallaşma sürecindeki şirketlere kadar, ihtiyaca özel ve esnek HR çözümleri sunuyoruz. Gereksiz karmaşıklık yok, sadece pratik sonuçlar.</p>
+    <div class="hero-actions">
+      <a href="#iletisim" class="btn-primary">Keşif Görüşmesi Planla</a>
+      <a href="#hizmetler" class="link-secondary">Hizmetler ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">2</div><div class="stat-label">Hizmet Modeli</div></div>
+      <div><div class="stat-num">9+</div><div class="stat-label">Hizmet Alanı</div></div>
+      <div><div class="stat-num">∞</div><div class="stat-label">Esneklik</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-circle">
+      <div class="visual-core">
+        <div class="big">lp</div>
+        <div class="sub">Loom People</div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="group">
-    <div class="label">Inverse — Dark Background</div>
-    <div class="card dark">
-      <div class="logo xl light">
-        <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
+<!-- SERVICES -->
+<section id="hizmetler">
+  <div class="services-head reveal">
+    <div>
+      <div class="eyebrow">Hizmetler</div>
+      <h2 class="section-title">İhtiyacınıza göre<br>şekillenen İK desteği</h2>
+    </div>
+    <p>Projeye özel veya uzun vadeli — her aşama için bir model var.</p>
+  </div>
+  <div class="tabs reveal">
+    <button class="tab active" data-tab="project">Proje Bazlı</button>
+    <button class="tab" data-tab="retainer">Retainer</button>
+  </div>
+
+  <div class="cards panel active" id="panel-project">
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="20" cy="19" r="7" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M25 24 L30 29" stroke="#C2610C" stroke-width="2" stroke-linecap="round"/><path d="M16 19 L19 22 L24 16" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <div class="card-title">HR Check-up</div>
+      <p class="card-desc">Mevcut İK süreçlerinizin kapsamlı analizi ve iyileştirme önerileri. Yasal uyum, bordro süreçleri ve çalışan memnuniyetini değerlendiriyoruz.</p>
+      <span class="card-tag">1–2 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="13" y="13" width="18" height="22" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="17" y1="19" x2="27" y2="19" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/><line x1="17" y1="23" x2="27" y2="23" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/><line x1="17" y1="27" x2="22" y2="27" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <div class="card-title">HR Set-up</div>
+      <p class="card-desc">Sıfırdan veya yeniden yapılandırma ile güçlü İK altyapısı kurulumu. Görev tanımları, temel politikalar ve İK yazılım entegrasyonu.</p>
+      <span class="card-tag">3–4 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><ellipse cx="22" cy="26" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><ellipse cx="22" cy="22.5" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><ellipse cx="22" cy="19" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><text x="22" y="21.5" text-anchor="middle" font-size="7" fill="#C2610C" font-family="DM Sans,sans-serif" font-weight="500">TL</text></svg>
+      <div class="card-title">Bütçe &amp; Ücret Yapılandırması</div>
+      <p class="card-desc">Piyasa verilerine dayalı, adil ve rekabetçi ücret politikaları. Nakit akışınızı disipline eden İK bütçesi ve ücret skalası.</p>
+      <span class="card-tag">1–2 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="20" cy="18" r="5" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M12 33 Q12 26 20 26 Q24 26 26 28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="30" cy="30" r="6" fill="#C2610C"/><path d="M27 30 L29.5 32.5 L33 27.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <div class="card-title">İşe Alım</div>
+      <p class="card-desc">Pozisyona özel iş tanımından teklif aşamasına kadar uçtan uca süreç yönetimi. Doğru adaya, doğru zamanda ulaşıyoruz.</p>
+      <span class="card-tag">Pozisyona Göre</span>
+    </div>
+  </div>
+
+  <div class="cards panel" id="panel-retainer">
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="13" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="none"/><circle cx="22" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="#FEF3E2"/><circle cx="31" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="17" y1="22" x2="18" y2="22" stroke="#C2610C" stroke-width="1.5"/><line x1="26" y1="22" x2="27" y2="22" stroke="#C2610C" stroke-width="1.5"/></svg>
+      <div class="card-title">Talent Pipeline Yönetimi</div>
+      <p class="card-desc">Sürekli güncellenen yetenek havuzu ile proaktif işe alım stratejisi. Pozisyon açılmadan önce doğru adaylar hazır.</p>
+      <span class="card-tag">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><polyline points="12,32 18,24 24,28 32,16" stroke="#C2610C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="32" cy="16" r="2.5" fill="#C2610C"/></svg>
+      <div class="card-title">Performans &amp; Yetenek Yönetimi</div>
+      <p class="card-desc">Şirket hedefleriyle çalışan performansını hizalayan sistemler. Çalışanlar büyürken şirket de büyür.</p>
+      <span class="card-tag">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="12" y="14" width="20" height="16" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="16" y1="20" x2="28" y2="20" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="16" y1="24" x2="24" y2="24" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/></svg>
+      <div class="card-title">Uzun Vadeli Bütçe &amp; Ücret Yönetimi</div>
+      <p class="card-desc">Uzun vadeli, sürdürülebilir ücret stratejileri ve bütçe planlaması.</p>
+      <span class="card-tag">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="14" y="12" width="16" height="20" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="18" y1="18" x2="26" y2="18" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="18" y1="22" x2="26" y2="22" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="18" y1="26" x2="22" y2="26" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/></svg>
+      <div class="card-title">HR Raporlama &amp; Veri Yönetimi</div>
+      <p class="card-desc">Veriye dayalı kararlar için düzenli İK raporlama ve analitik.</p>
+      <span class="card-tag">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="22" cy="22" r="8" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M22 16 V14" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M22 30 V28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M16 22 H14" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M30 22 H28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="card-title">HR Süreç Otomasyonu</div>
+      <p class="card-desc">Tekrarlayan İK süreçlerini otomatikleştirerek zamandan ve maliyetten tasarruf.</p>
+      <span class="card-tag">Aylık Retainer</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="nasil">
+  <div class="reveal">
+    <div class="eyebrow">Nasıl Çalışır</div>
+    <h2 class="section-title">Basit, hızlı,<br>sonuç odaklı</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-line"></div>
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">Keşif Görüşmesi</div>
+      <p class="step-desc">Şirketinizin mevcut durumunu ve ihtiyaçlarını birlikte değerlendiriyoruz. Ücretsiz, bağlayıcı olmayan bir görüşme.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-title">Özel Teklif</div>
+      <p class="step-desc">İhtiyacınıza özel kapsam ve fiyatlandırma ile size en uygun hizmet modelini belirliyoruz.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-title">Uygulama &amp; Sonuç</div>
+      <p class="step-desc">Belirlenen takvimde, net çıktılarla çalışmaya başlıyoruz. Şeffaf iletişim, ölçülebilir sonuçlar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="hakkimizda">
+  <div class="about-content">
+    <div class="reveal">
+      <div class="eyebrow">Hakkımızda</div>
+      <h2 class="section-title" style="margin-bottom:40px">Neden Loom People?</h2>
+    </div>
+    <div class="reveal">
+      <p><strong>Loom People</strong>, şirketlerin büyüme yolculuğunda insan ve organizasyon yapılarını daha akıllı, daha sade ve daha sürdürülebilir hale getirmek için kurulmuş yeni nesil bir HR danışmanlık yaklaşımıdır.</p>
+      <p>Bugünün şirketleri hızlı hareket etmek zorunda. Bu hızda, klasik ve ağır İK yapıları çoğu zaman işin önünü açmak yerine yavaşlatır. Loom People olarak odağımız; şirketlerin ihtiyaç duyduğu HR yapılarını gereksiz karmaşıklık yaratmadan, pratik ve uygulanabilir şekilde kurmak ve geliştirmek.</p>
+      <p>Start-up'lardan kurumsallaşma sürecindeki şirketlere, HR departmanı olmayan ya da mevcut yapısını dönüştürmek isteyen organizasyonlara kadar geniş bir yelpazede çalışıyoruz. Her şirketin ihtiyacının farklı olduğunun farkındayız; bu yüzden standart çözümler yerine, <strong>ihtiyaca özel ve esnek yaklaşımlar</strong> benimsiyoruz.</p>
+    </div>
+    <div class="quote reveal">
+      <p>"Amacımız net: Şirketlerin doğru insanlarla, doğru yapı içinde ve sürdürülebilir bir şekilde büyümesini sağlamak."</p>
+      <div class="quote-author">
+        <div class="quote-avatar">LP</div>
+        <div>
+          <div style="font-size:14px;font-weight:500">Loom People</div>
+          <div style="font-size:12px;color:var(--ink-muted)">Yeni Nesil HR Danışmanlık</div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="group">
-    <div class="label">Compact — Navbar Size</div>
-    <div class="logo">
-      <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
+<!-- CONTACT -->
+<section id="iletisim">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-eyebrow">İletişim</div>
+      <h2 class="contact-title">Hadi bir<br>görüşelim.</h2>
+      <p class="contact-desc">Şirketinizin İK ihtiyaçlarını konuşmak için zaman ayırın. Ücretsiz keşif görüşmesinde ne yapabileceğimizi birlikte değerlendirelim.</p>
+      <div class="contact-info"><span>📍</span><span><strong>İstanbul, Türkiye</strong> — Remote çalışma mevcut</span></div>
+      <div class="contact-info"><span>📧</span><strong>hello@loompeople.com</strong></div>
     </div>
+    <form id="contactForm" class="reveal">
+      <div class="form-row two">
+        <div>
+          <label class="form-label">Adınız</label>
+          <input class="form-input" type="text" placeholder="Can Yılmaz" required />
+        </div>
+        <div>
+          <label class="form-label">Şirket</label>
+          <input class="form-input" type="text" placeholder="Startup A.Ş." />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label class="form-label">E-posta</label>
+          <input class="form-input" type="email" placeholder="hello@startup.com" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label class="form-label">İlgilendiğiniz Hizmet</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Seçiniz</option>
+            <option>HR Check-up</option>
+            <option>HR Set-up</option>
+            <option>Bütçe &amp; Ücret Yapılandırması</option>
+            <option>İşe Alım</option>
+            <option>Retainer Danışmanlık</option>
+            <option>Henüz bilmiyorum</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label class="form-label">Mesajınız</label>
+          <textarea class="form-textarea" rows="4" placeholder="Şirketinizden ve İK ihtiyaçlarınızdan kısaca bahseder misiniz?"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">Mesaj Gönder →</button>
+      <p class="form-note">48 saat içinde geri dönüş sağlanır.</p>
+    </form>
   </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo light">
+    <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
+  </a>
+  <div class="copy">© <span id="yr"></span> Loom People. Tüm hakları saklıdır.</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.classList.add('success');
+    btn.textContent = '✓ Mesajınız Alındı';
+  });
+</script>
 </body>
 </html>
