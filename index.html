@@ -385,23 +385,23 @@
       <div class="form-row two">
         <div>
           <label class="form-label" data-tr="Adınız" data-en="Your Name">Adınız</label>
-          <input class="form-input" type="text" data-tr-placeholder="Can Yılmaz" data-en-placeholder="Jane Smith" placeholder="Can Yılmaz" required />
+          <input class="form-input" type="text" name="name" data-tr-placeholder="Can Yılmaz" data-en-placeholder="Jane Smith" placeholder="Can Yılmaz" required />
         </div>
         <div>
           <label class="form-label" data-tr="Şirket" data-en="Company">Şirket</label>
-          <input class="form-input" type="text" data-tr-placeholder="Startup A.Ş." data-en-placeholder="Startup Inc." placeholder="Startup A.Ş." />
+          <input class="form-input" type="text" name="company" data-tr-placeholder="Startup A.Ş." data-en-placeholder="Startup Inc." placeholder="Startup A.Ş." />
         </div>
       </div>
       <div class="form-row">
         <div>
           <label class="form-label" data-tr="E-posta" data-en="Email">E-posta</label>
-          <input class="form-input" type="email" placeholder="hello@startup.com" required />
+          <input class="form-input" type="email" name="email" placeholder="hello@startup.com" required />
         </div>
       </div>
       <div class="form-row">
         <div>
           <label class="form-label" data-tr="İlgilendiğiniz Hizmet" data-en="Service of Interest">İlgilendiğiniz Hizmet</label>
-          <select class="form-select" required>
+          <select class="form-select" name="service" required>
             <option value="" disabled selected data-tr="Seçiniz" data-en="Select one">Seçiniz</option>
             <option data-tr="HR Check-up" data-en="HR Check-up">HR Check-up</option>
             <option data-tr="HR Set-up" data-en="HR Set-up">HR Set-up</option>
@@ -415,7 +415,7 @@
       <div class="form-row">
         <div>
           <label class="form-label" data-tr="Mesajınız" data-en="Message">Mesajınız</label>
-          <textarea class="form-textarea" rows="4" data-tr-placeholder="Şirketinizden ve İK ihtiyaçlarınızdan kısaca bahseder misiniz?" data-en-placeholder="Tell us briefly about your company and HR needs." placeholder="Şirketinizden ve İK ihtiyaçlarınızdan kısaca bahseder misiniz?"></textarea>
+          <textarea class="form-textarea" name="message" rows="4" data-tr-placeholder="Şirketinizden ve İK ihtiyaçlarınızdan kısaca bahseder misiniz?" data-en-placeholder="Tell us briefly about your company and HR needs." placeholder="Şirketinizden ve İK iltiyaçlarınızdan kısaca bahseder misiniz?"></textarea>
         </div>
       </div>
       <button type="submit" class="submit-btn" id="submitBtn" data-tr="Mesaj Gönder →" data-en="Send Message →" data-tr-success="✓ Mesajınız Alındı" data-en-success="✓ Message Received">Mesaj Gönder →</button>
