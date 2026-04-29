@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>İK Nabız Testi — Loom People</title>
-<meta name="description" content="45 dakikada şirketinizin insan kaynakları durumunu birlikte değerlendiriyoruz. Ücretsiz, taahhütsüz." />
+<title>Loom People — Yeni Nesil HR Danışmanlık</title>
+<meta name="description" content="Start-up'lardan kurumsallaşma sürecindeki şirketlere kadar, ihtiyaca özel ve esnek HR çözümleri. Pratik, uygulanabilir, sürdürülebilir." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -31,7 +31,11 @@
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
+  .heading{font-family:'Fraunces',Georgia,serif;font-weight:300;letter-spacing:-0.02em}
+  em{font-style:italic;color:var(--primary)}
   a{color:inherit;text-decoration:none}
+  .container{padding:0 24px}
+  @media(min-width:768px){.container{padding:0 60px}}
 
   /* ========== LOGO ========== */
   .logo{display:inline-flex;align-items:baseline;font-family:'Fraunces',Georgia,serif}
@@ -50,283 +54,426 @@
     border-bottom:1px solid var(--border-soft);
   }
   @media(min-width:768px){nav.topbar{padding:0 60px}}
-  .nav-back{font-size:13px;font-weight:500;color:var(--ink-muted);display:inline-flex;align-items:center;gap:6px;transition:color .2s}
-  .nav-back:hover{color:var(--primary)}
+  .nav-links{display:none;align-items:center;gap:12px}
+  @media(min-width:768px){.nav-links{display:flex}}
+  .nav-links a{font-size:13px;font-weight:500;color:var(--ink-muted);padding:8px 12px;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--ink);color:var(--warm-white);padding:10px 24px;border-radius:9999px;font-size:13px;font-weight:500;transition:all .2s}
+  .nav-cta:hover{background:var(--primary);transform:translateY(-1px)}
+  .nav-toggle{display:flex;background:none;border:none;cursor:pointer;color:var(--ink)}
+  @media(min-width:768px){.nav-toggle{display:none}}
+  .mobile-menu{display:none;position:absolute;top:60px;left:0;right:0;background:var(--warm-white);border-bottom:1px solid var(--border-soft);padding:24px}
+  .mobile-menu.open{display:block}
+  .mobile-menu a{display:block;padding:10px 0;font-size:16px;font-weight:500;color:var(--ink-muted)}
+  .mobile-menu .nav-cta{display:block;text-align:center;margin-top:12px;color:var(--warm-white)}
 
   /* ========== HERO ========== */
-  .page-hero{
-    padding:140px 24px 80px;
-    max-width:680px;
-    margin:0 auto;
-    text-align:center;
+  .hero{
+    min-height:100vh;
+    display:grid;grid-template-columns:1fr;align-items:center;
+    padding:120px 24px 80px;position:relative;overflow:hidden;gap:40px;
   }
-  @media(min-width:768px){.page-hero{padding:140px 60px 80px}}
+  @media(min-width:1024px){
+    .hero{grid-template-columns:1fr 1fr;padding:120px 60px 80px}
+  }
+  .hero-bg-1{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(194,97,12,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 10% 80%,rgba(194,97,12,0.05) 0%,transparent 60%)}
+  .hero-bg-2{position:absolute;inset:0;z-index:0;opacity:.5;background-image:linear-gradient(var(--border-soft) 1px,transparent 1px),linear-gradient(90deg,var(--border-soft) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%);mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%)}
+  .hero-content{position:relative;z-index:10}
   .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);border:1px solid rgba(194,97,12,0.2);border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:28px}
-  .badge .dot-pulse{width:6px;height:6px;border-radius:9999px;background:var(--primary);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-  h1.page-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(36px,4.5vw,58px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
-  h1.page-title em{font-style:italic;color:var(--primary)}
-  .page-desc{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.65;max-width:520px;margin:0 auto 48px}
+  .badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--primary)}
+  h1.hero-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(40px,5vw,68px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
+  .hero-desc{font-size:17px;font-weight:300;color:var(--ink-soft);line-height:1.6;max-width:460px;margin-bottom:40px}
+  .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn-primary{background:var(--primary);color:#fff;padding:14px 32px;border-radius:9999px;font-size:15px;font-weight:500;box-shadow:0 4px 20px rgba(194,97,12,0.25);transition:all .2s;border:none;cursor:pointer}
+  .btn-primary:hover{filter:brightness(.9);transform:translateY(-2px)}
+  .link-secondary{color:var(--ink-soft);font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+  .link-secondary:hover{color:var(--primary)}
+  .hero-stats{display:flex;gap:36px;margin-top:52px;padding-top:36px;border-top:1px solid var(--border)}
+  .stat-num{font-family:'Fraunces',Georgia,serif;font-size:28px;letter-spacing:-0.02em}
+  .stat-label{font-size:12px;color:var(--ink-muted);margin-top:2px}
+  .hero-visual{display:none;position:relative;z-index:10;align-items:center;justify-content:center}
+  @media(min-width:1024px){.hero-visual{display:flex}}
+  .visual-circle{width:380px;height:380px;border-radius:50%;background:linear-gradient(135deg,rgba(194,97,12,0.12),rgba(224,138,60,0.04));display:flex;align-items:center;justify-content:center;position:relative}
+  .visual-circle::before{content:'';position:absolute;inset:30px;border-radius:50%;border:1px dashed rgba(194,97,12,0.25)}
+  .visual-circle::after{content:'';position:absolute;inset:80px;border-radius:50%;border:1px solid rgba(194,97,12,0.18)}
+  .visual-core{position:relative;z-index:2;text-align:center;font-family:'Fraunces',Georgia,serif}
+  .visual-core .big{font-size:64px;font-weight:300;color:var(--primary);font-style:italic;line-height:1}
+  .visual-core .sub{font-size:13px;color:var(--ink-muted);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif}
 
-  /* ========== WHAT YOU GET ========== */
-  .what-strip{
-    background:var(--cream);
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    padding:48px 24px;
+  /* ========== SECTION COMMON ========== */
+  section{padding:100px 24px;border-top:1px solid var(--border)}
+  @media(min-width:768px){section{padding:100px 60px}}
+  .eyebrow{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+  h2.section-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;letter-spacing:-0.02em;line-height:1.15}
+
+  /* ========== SERVICES ========== */
+  #hizmetler{background:var(--cream)}
+  .services-head{display:flex;flex-direction:column;justify-content:space-between;margin-bottom:56px;gap:16px}
+  @media(min-width:768px){.services-head{flex-direction:row;align-items:flex-end}}
+  .services-head p{font-size:14px;color:var(--ink-muted);max-width:240px;line-height:1.6}
+  @media(min-width:768px){.services-head p{text-align:right}}
+  .tabs{display:flex;gap:8px;margin-bottom:28px}
+  .tab{padding:8px 20px;border-radius:9999px;border:1px solid var(--border);background:transparent;color:var(--ink-muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+  .tab:hover{background:var(--ink);color:var(--warm-white);border-color:var(--ink)}
+  .tab.active{background:var(--ink);color:var(--warm-white);border-color:var(--ink)}
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+  .card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:all .3s}
+  .card:hover{border-color:rgba(194,97,12,0.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.06)}
+  .card-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent-mid));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .card:hover .card-bar{transform:scaleX(1)}
+  .card-icon{width:44px;height:44px}
+  .card-title{font-family:'Fraunces',Georgia,serif;font-size:19px;letter-spacing:-0.02em;margin:16px 0 8px}
+  .card-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;font-weight:300}
+  .card-tag{display:inline-block;margin-top:14px;padding:4px 12px;background:var(--accent-light);color:var(--primary);border-radius:9999px;font-size:11px;font-weight:500}
+  .panel{display:none}
+  .panel.active{display:grid}
+
+  /* ========== PROCESS ========== */
+  .process-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:56px;position:relative}
+  @media(min-width:768px){.process-grid{grid-template-columns:repeat(3,1fr)}}
+  .process-line{display:none;position:absolute;top:28px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:1px;background:linear-gradient(90deg,var(--border),var(--primary),var(--border))}
+  @media(min-width:768px){.process-line{display:block}}
+  .step{margin-top:40px}
+  @media(min-width:768px){.step{margin-top:0;padding:0 32px}.step:first-child{padding-left:0}.step:last-child{padding-right:0}}
+  .step-num{width:56px;height:56px;background:var(--warm-white);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',Georgia,serif;font-size:20px;color:var(--primary);position:relative;z-index:10;margin-bottom:20px}
+  .step-title{font-family:'Fraunces',Georgia,serif;font-size:19px;letter-spacing:-0.02em;margin-bottom:8px}
+  .step-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;font-weight:300}
+
+  /* ========== ABOUT ========== */
+  #hakkimizda{background:var(--cream)}
+  .about-content{max-width:880px}
+  .about-content > p{font-size:15px;color:var(--ink-soft);line-height:1.7;font-weight:300;margin-bottom:24px}
+  .about-content strong{font-weight:400;color:var(--ink)}
+  .quote{margin-top:48px;padding:32px;border-radius:16px;background:var(--warm-white);border:1px solid var(--border)}
+  .quote p{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:300;line-height:1.35;letter-spacing:-0.02em}
+  .quote-author{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .quote-avatar{width:40px;height:40px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces',Georgia,serif;font-size:14px}
+
+  /* ========== CONTACT ========== */
+  #iletisim{background:var(--ink);position:relative;overflow:hidden;border-top:none}
+  #iletisim::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(194,97,12,0.15) 0%,transparent 70%)}
+  .contact-grid{position:relative;z-index:10;display:grid;grid-template-columns:1fr;gap:80px;align-items:flex-start}
+  @media(min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-mid);margin-bottom:12px}
+  .contact-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;letter-spacing:-0.02em;color:#fff}
+  .contact-desc{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;font-weight:300;margin-top:16px}
+  .contact-info{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;color:rgba(255,255,255,0.6)}
+  .contact-info strong{color:rgba(255,255,255,0.9);font-weight:400}
+  .form-row{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:12px}
+  @media(min-width:640px){.form-row.two{grid-template-columns:1fr 1fr}}
+  .form-label{display:block;font-size:11px;font-weight:500;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px}
+  .form-input,.form-select,.form-textarea{
+    width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;font-weight:300;
+    font-family:inherit;outline:none;transition:all .2s;
   }
-  @media(min-width:768px){.what-strip{padding:48px 60px}}
-  .what-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px}
-  @media(min-width:768px){.what-inner{grid-template-columns:repeat(3,1fr)}}
-  .what-item{display:flex;flex-direction:column;gap:8px}
-  .what-num{font-family:'Fraunces',Georgia,serif;font-size:32px;font-weight:300;color:var(--primary);font-style:italic;line-height:1}
-  .what-label{font-size:14px;font-weight:500;color:var(--ink)}
-  .what-desc{font-size:13px;color:var(--ink-muted);line-height:1.6;font-weight:300}
-
-  /* ========== FORM ========== */
-  .form-section{padding:80px 24px 100px;max-width:640px;margin:0 auto}
-  @media(min-width:768px){.form-section{padding:80px 0 100px}}
-
-  .form-eyebrow{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
-  .form-heading{font-family:'Fraunces',Georgia,serif;font-size:clamp(22px,2.5vw,30px);font-weight:300;letter-spacing:-0.02em;margin-bottom:36px;color:var(--ink)}
-
-  .field{margin-bottom:20px}
-  .field-label{display:block;font-size:13px;font-weight:500;color:var(--ink-soft);margin-bottom:8px}
-  .field-label span{font-weight:300;color:var(--ink-muted);font-size:12px;margin-left:4px}
-
-  /* Radio & checkbox groups */
-  .options{display:flex;flex-direction:column;gap:8px}
-  .options.inline{flex-direction:row;flex-wrap:wrap;gap:8px}
-  .opt-label{
-    display:flex;align-items:center;gap:10px;
-    padding:11px 16px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    cursor:pointer;
-    font-size:14px;
-    color:var(--ink-soft);
-    transition:all .15s;
-    user-select:none;
-  }
-  .opt-label:hover{border-color:var(--primary);color:var(--ink)}
-  .opt-label input{accent-color:var(--primary);width:15px;height:15px;flex-shrink:0}
-  .opt-label:has(input:checked){
-    border-color:var(--primary);
-    background:var(--accent-light);
-    color:var(--ink);
-  }
-  .options.inline .opt-label{flex:0 0 auto}
-
-  /* Text inputs */
-  .form-input,.form-textarea,.form-select-el{
-    width:100%;
-    padding:12px 16px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    font-family:'DM Sans',sans-serif;
-    font-size:14px;
-    color:var(--ink);
-    background:var(--warm-white);
-    transition:border-color .2s;
-    outline:none;
-    appearance:none;
-  }
-  .form-input:focus,.form-textarea:focus,.form-select-el:focus{border-color:var(--primary)}
-  .form-textarea{resize:vertical;min-height:100px;line-height:1.6}
-  .form-input::placeholder,.form-textarea::placeholder{color:var(--ink-muted)}
-
-  /* Two column row */
-  .form-row-two{display:grid;grid-template-columns:1fr;gap:16px}
-  @media(min-width:520px){.form-row-two{grid-template-columns:1fr 1fr}}
-
-  /* Divider */
-  .form-divider{border:none;border-top:1px solid var(--border-soft);margin:32px 0}
-
-  /* Submit */
-  .submit-btn{
-    display:block;width:100%;
-    background:var(--primary);color:#fff;
-    padding:15px 32px;
-    border-radius:9999px;
-    font-size:15px;font-weight:500;
-    font-family:'DM Sans',sans-serif;
-    box-shadow:0 4px 20px rgba(194,97,12,0.25);
-    transition:all .2s;
-    border:none;cursor:pointer;
-    margin-top:32px;
-  }
-  .submit-btn:hover:not(:disabled){filter:brightness(.9);transform:translateY(-2px)}
-  .submit-btn:disabled{opacity:.6;cursor:not-allowed}
-  .submit-btn.success{background:#4A7C59;box-shadow:0 4px 20px rgba(74,124,89,0.25)}
-  .form-note{font-size:12px;color:var(--ink-muted);text-align:center;margin-top:14px;line-height:1.6}
+  .form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,0.25)}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--primary);background:rgba(255,255,255,0.09)}
+  .form-textarea{resize:none}
+  .form-select option{background:var(--ink);color:#fff}
+  .submit-btn{width:100%;padding:16px;border-radius:10px;font-size:15px;font-weight:500;background:var(--primary);color:#fff;border:none;cursor:pointer;transition:all .2s;margin-top:4px;box-shadow:0 4px 20px rgba(194,97,12,0.3);font-family:inherit}
+  .submit-btn:hover{filter:brightness(.9);transform:translateY(-1px)}
+  .submit-btn.success{background:#16a34a}
+  .form-note{font-size:11px;color:rgba(255,255,255,0.25);text-align:center;margin-top:10px}
 
   /* ========== FOOTER ========== */
-  footer{
-    padding:32px 24px;
-    border-top:1px solid var(--border);
-    background:var(--ink);
-    display:flex;flex-direction:column;align-items:center;gap:12px;
-  }
-  @media(min-width:768px){footer{flex-direction:row;justify-content:space-between;padding:32px 60px}}
-  .copy{font-size:12px;color:rgba(255,255,255,0.4)}
+  footer{padding:24px;border-top:1px solid rgba(255,255,255,0.08);background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px}
+  @media(min-width:768px){footer{flex-direction:row;padding:24px 60px}}
+  footer .copy{font-size:12px;color:rgba(255,255,255,0.25)}
 
-  /* ========== REVEAL ========== */
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
+  /* Lang toggle */
+  .lang-toggle{display:flex;align-items:center;background:var(--cream);border:1px solid var(--border);border-radius:9999px;padding:3px;gap:2px;margin-right:8px}
+  .lang-btn{background:none;border:none;padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:500;color:var(--ink-muted);cursor:pointer;font-family:inherit;transition:all .2s}
+  .lang-btn.active{background:var(--ink);color:#fff}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="topbar">
-  <a href="index.html" class="logo">
+  <a href="#" class="logo">
     <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
   </a>
-  <a href="index.html" class="nav-back">← Ana Sayfa</a>
+  <div class="nav-links">
+    <a href="#hizmetler" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+    <a href="#nasil" data-tr="Nasıl Çalışır" data-en="How It Works">Nasıl Çalışır</a>
+    <a href="#hakkimizda" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+    <a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
+    <a href="nabiz-testi.html" data-tr="İK Nabız Testi" data-en="HR Pulse Check" style="color:var(--primary);font-weight:500">İK Nabız Testi</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#iletisim" class="nav-cta" data-tr="İletişime Geç" data-en="Get in Touch">İletişime Geç</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hizmetler" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+    <a href="#nasil" data-tr="Nasıl Çalışır" data-en="How It Works">Nasıl Çalışır</a>
+    <a href="#hakkimizda" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+    <a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
+    <a href="nabiz-testi.html" data-tr="İK Nabız Testi" data-en="HR Pulse Check" style="color:var(--primary);font-weight:500">İK Nabız Testi</a>
+    <a href="#iletisim" class="nav-cta" data-tr="İletişime Geç" data-en="Get in Touch">İletişime Geç</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="page-hero reveal">
-  <div class="badge"><span class="dot-pulse"></span> Ücretsiz &amp; Taahhütsüz</div>
-  <h1 class="page-title">İK <em>Nabız</em> Testi</h1>
-  <p class="page-desc">
-    Ekibiniz büyürken insan kaynakları altyapısı çoğu zaman geride kalır. 
-    45 dakikada mevcut durumu birlikte değerlendiriyor, size 2–3 somut gözlem bırakıyoruz. 
-    Satış yok, sadece bakış açısı.
-  </p>
-</div>
-
-<!-- WHAT YOU GET -->
-<div class="what-strip">
-  <div class="what-inner">
-    <div class="what-item reveal">
-      <div class="what-num">45'</div>
-      <div class="what-label">Bire bir görüşme</div>
-      <div class="what-desc">Zoom veya telefon — size uygun formatta, randevunuzu siz belirlersiniz.</div>
+<section class="hero" style="border-top:none">
+  <div class="hero-bg-1"></div>
+  <div class="hero-bg-2"></div>
+  <div class="hero-content">
+    <div class="badge"><span class="dot"></span><span data-tr="Yeni Nesil HR Danışmanlık" data-en="Next-Gen HR Consulting">Yeni Nesil HR Danışmanlık</span></div>
+    <h1 class="hero-title" data-tr="Şirketinizin<br><em>insan dokusunu</em><br>birlikte kuralım." data-en="Let's build your<br>company's <em>human fabric</em><br>together.">Şirketinizin<br><em>insan dokusunu</em><br>birlikte kuralım.</h1>
+    <p class="hero-desc" data-tr="Start-up'lardan kurumsallaşma sürecindeki şirketlere kadar, ihtiyaca özel ve esnek HR çözümleri sunuyoruz. Gereksiz karmaşıklık yok, sadece pratik sonuçlar." data-en="From startups to scaling companies, we deliver tailored and flexible HR solutions. No unnecessary complexity — just practical results.">Start-up'lardan kurumsallaşma sürecindeki şirketlere kadar, ihtiyaca özel ve esnek HR çözümleri sunuyoruz. Gereksiz karmaşıklık yok, sadece pratik sonuçlar.</p>
+    <div class="hero-actions">
+      <a href="nabiz-testi.html" class="btn-primary" data-tr="Ücretsiz İK Nabız Testi" data-en="Free HR Pulse Check">Ücretsiz İK Nabız Testi</a>
+      <a href="#hizmetler" class="link-secondary" data-tr="Hizmetler ↓" data-en="Services ↓">Hizmetler ↓</a>
     </div>
-    <div class="what-item reveal">
-      <div class="what-num">2–3</div>
-      <div class="what-label">Somut gözlem</div>
-      <div class="what-desc">Şirketinize özel, uygulanabilir tespitler. Genel tavsiye değil, gerçek öncelikler.</div>
-    </div>
-    <div class="what-item reveal">
-      <div class="what-num">0</div>
-      <div class="what-label">Taahhüt yok</div>
-      <div class="what-desc">Görüşmenin sonunda bir şey satın almak zorunda değilsiniz. Söz.</div>
+    <div class="hero-stats">
+      <div><div class="stat-num">2</div><div class="stat-label" data-tr="Hizmet Modeli" data-en="Service Models">Hizmet Modeli</div></div>
+      <div><div class="stat-num">9+</div><div class="stat-label" data-tr="Hizmet Alanı" data-en="Service Areas">Hizmet Alanı</div></div>
+      <div><div class="stat-num">∞</div><div class="stat-label" data-tr="Esneklik" data-en="Flexibility">Esneklik</div></div>
     </div>
   </div>
-</div>
 
-<!-- FORM -->
-<div class="form-section">
-  <p class="form-eyebrow">Başvuru Formu</p>
-  <h2 class="form-heading">Sizi tanımak için birkaç soru</h2>
+</section>
 
-  <form id="nabizForm" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="22d39b91-4af9-48b5-acb2-b68653eb1fd3"/>
-    <input type="hidden" name="subject" value="Loom People — İK Nabız Testi Başvurusu"/>
-    <input type="checkbox" name="botcheck" style="display:none"/>
+<!-- SERVICES -->
+<section id="hizmetler">
+  <div class="services-head reveal">
+    <div>
+      <div class="eyebrow" data-tr="Hizmetler" data-en="Services">Hizmetler</div>
+      <h2 class="section-title" data-tr="İhtiyacınıza göre<br>şekillenen İK desteği" data-en="HR support shaped<br>around your needs">İhtiyacınıza göre<br>şekillenen İK desteği</h2>
+    </div>
+    <p data-tr="Projeye özel veya uzun vadeli — her aşama için bir model var." data-en="Project-based or long-term — there's a model for every stage.">Projeye özel veya uzun vadeli — her aşama için bir model var.</p>
+  </div>
+  <div class="tabs reveal">
+    <button class="tab active" data-tab="project" data-tr="Proje Bazlı" data-en="Project-Based">Proje Bazlı</button>
+    <button class="tab" data-tab="retainer" data-tr="Retainer" data-en="Retainer">Retainer</button>
+  </div>
 
-    <!-- Ad & Şirket -->
-    <div class="form-row-two reveal">
-      <div class="field">
-        <label class="field-label" for="nt-name">Adınız</label>
-        <input class="form-input" type="text" id="nt-name" name="name" placeholder="Can Yılmaz" required />
+  <div class="cards panel active" id="panel-project">
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="20" cy="19" r="7" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M25 24 L30 29" stroke="#C2610C" stroke-width="2" stroke-linecap="round"/><path d="M16 19 L19 22 L24 16" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <div class="card-title" data-tr="HR Check-up" data-en="HR Check-up">HR Check-up</div>
+      <p class="card-desc" data-tr="Mevcut İK süreçlerinizin kapsamlı analizi ve iyileştirme önerileri. Yasal uyum, bordro süreçleri ve çalışan memnuniyetini değerlendiriyoruz." data-en="A comprehensive analysis of your current HR processes with improvement recommendations. We evaluate legal compliance, payroll, and employee satisfaction.">Mevcut İK süreçlerinizin kapsamlı analizi ve iyileştirme önerileri. Yasal uyum, bordro süreçleri ve çalışan memnuniyetini değerlendiriyoruz.</p>
+      <span class="card-tag" data-tr="1–2 Hafta" data-en="1–2 Weeks">1–2 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="13" y="13" width="18" height="22" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="17" y1="19" x2="27" y2="19" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/><line x1="17" y1="23" x2="27" y2="23" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/><line x1="17" y1="27" x2="22" y2="27" stroke="#C2610C" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <div class="card-title" data-tr="HR Set-up" data-en="HR Set-up">HR Set-up</div>
+      <p class="card-desc" data-tr="Sıfırdan veya yeniden yapılandırma ile güçlü İK altyapısı kurulumu. Görev tanımları, temel politikalar ve İK yazılım entegrasyonu." data-en="Build a solid HR infrastructure from scratch or restructure an existing one. Job descriptions, core policies, and HR software integration.">Sıfırdan veya yeniden yapılandırma ile güçlü İK altyapısı kurulumu. Görev tanımları, temel politikalar ve İK yazılım entegrasyonu.</p>
+      <span class="card-tag" data-tr="3–4 Hafta" data-en="3–4 Weeks">3–4 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><ellipse cx="22" cy="26" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><ellipse cx="22" cy="22.5" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><ellipse cx="22" cy="19" rx="9" ry="3.5" fill="#FEF3E2" stroke="#C2610C" stroke-width="1.3"/><text x="22" y="21.5" text-anchor="middle" font-size="7" fill="#C2610C" font-family="DM Sans,sans-serif" font-weight="500">TL</text></svg>
+      <div class="card-title" data-tr="Bütçe &amp; Ücret Yapılandırması" data-en="Budget &amp; Compensation Design">Bütçe &amp; Ücret Yapılandırması</div>
+      <p class="card-desc" data-tr="Piyasa verilerine dayalı, adil ve rekabetçi ücret politikaları. Nakit akışınızı disipline eden İK bütçesi ve ücret skalası." data-en="Fair and competitive compensation policies based on market data. An HR budget and salary scale that brings discipline to your cash flow.">Piyasa verilerine dayalı, adil ve rekabetçi ücret politikaları. Nakit akışınızı disipline eden İK bütçesi ve ücret skalası.</p>
+      <span class="card-tag" data-tr="1–2 Hafta" data-en="1–2 Weeks">1–2 Hafta</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="20" cy="18" r="5" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M12 33 Q12 26 20 26 Q24 26 26 28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="30" cy="30" r="6" fill="#C2610C"/><path d="M27 30 L29.5 32.5 L33 27.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <div class="card-title" data-tr="İşe Alım" data-en="Recruitment">İşe Alım</div>
+      <p class="card-desc" data-tr="Pozisyona özel iş tanımından teklif aşamasına kadar uçtan uca süreç yönetimi. Doğru adaya, doğru zamanda ulaşıyoruz." data-en="End-to-end process management from job definition to offer stage. The right candidate, at the right time.">Pozisyona özel iş tanımından teklif aşamasına kadar uçtan uca süreç yönetimi. Doğru adaya, doğru zamanda ulaşıyoruz.</p>
+      <span class="card-tag" data-tr="Pozisyona Göre" data-en="Per Role">Pozisyona Göre</span>
+    </div>
+  </div>
+
+  <div class="cards panel" id="panel-retainer">
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="13" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="none"/><circle cx="22" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="#FEF3E2"/><circle cx="31" cy="22" r="4" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="17" y1="22" x2="18" y2="22" stroke="#C2610C" stroke-width="1.5"/><line x1="26" y1="22" x2="27" y2="22" stroke="#C2610C" stroke-width="1.5"/></svg>
+      <div class="card-title" data-tr="Talent Pipeline Yönetimi" data-en="Talent Pipeline Management">Talent Pipeline Yönetimi</div>
+      <p class="card-desc" data-tr="Sürekli güncellenen yetenek havuzu ile proaktif işe alım stratejisi. Pozisyon açılmadan önce doğru adaylar hazır." data-en="A continuously updated talent pool with a proactive recruitment strategy. The right candidates are ready before the role opens.">Sürekli güncellenen yetenek havuzu ile proaktif işe alım stratejisi. Pozisyon açılmadan önce doğru adaylar hazır.</p>
+      <span class="card-tag" data-tr="Aylık Retainer" data-en="Monthly Retainer">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><polyline points="12,32 18,24 24,28 32,16" stroke="#C2610C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="32" cy="16" r="2.5" fill="#C2610C"/></svg>
+      <div class="card-title" data-tr="Performans &amp; Yetenek Yönetimi" data-en="Performance &amp; Talent Management">Performans &amp; Yetenek Yönetimi</div>
+      <p class="card-desc" data-tr="Şirket hedefleriyle çalışan performansını hizalayan sistemler. Çalışanlar büyürken şirket de büyür." data-en="Systems that align employee performance with company goals. When people grow, the company grows.">Şirket hedefleriyle çalışan performansını hizalayan sistemler. Çalışanlar büyürken şirket de büyür.</p>
+      <span class="card-tag" data-tr="Aylık Retainer" data-en="Monthly Retainer">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="12" y="14" width="20" height="16" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="16" y1="20" x2="28" y2="20" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="16" y1="24" x2="24" y2="24" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/></svg>
+      <div class="card-title" data-tr="Uzun Vadeli Bütçe &amp; Ücret Yönetimi" data-en="Long-Term Budget &amp; Compensation Management">Uzun Vadeli Bütçe &amp; Ücret Yönetimi</div>
+      <p class="card-desc" data-tr="Uzun vadeli, sürdürülebilir ücret stratejileri ve bütçe planlaması." data-en="Long-term, sustainable compensation strategies and budget planning.">Uzun vadeli, sürdürülebilir ücret stratejileri ve bütçe planlaması.</p>
+      <span class="card-tag" data-tr="Aylık Retainer" data-en="Monthly Retainer">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><rect x="14" y="12" width="16" height="20" rx="2" stroke="#C2610C" stroke-width="1.5" fill="none"/><line x1="18" y1="18" x2="26" y2="18" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="18" y1="22" x2="26" y2="22" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/><line x1="18" y1="26" x2="22" y2="26" stroke="#C2610C" stroke-width="1" stroke-linecap="round"/></svg>
+      <div class="card-title" data-tr="HR Raporlama &amp; Veri Yönetimi" data-en="HR Reporting &amp; Data Management">HR Raporlama &amp; Veri Yönetimi</div>
+      <p class="card-desc" data-tr="Veriye dayalı kararlar için düzenli İK raporlama ve analitik." data-en="Regular HR reporting and analytics for data-driven decisions.">Veriye dayalı kararlar için düzenli İK raporlama ve analitik.</p>
+      <span class="card-tag" data-tr="Aylık Retainer" data-en="Monthly Retainer">Aylık Retainer</span>
+    </div>
+    <div class="card"><div class="card-bar"></div>
+      <svg class="card-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FEF3E2"/><circle cx="22" cy="22" r="8" stroke="#C2610C" stroke-width="1.5" fill="none"/><path d="M22 16 V14" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M22 30 V28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M16 22 H14" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/><path d="M30 22 H28" stroke="#C2610C" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="card-title" data-tr="HR Süreç Otomasyonu" data-en="HR Process Automation">HR Süreç Otomasyonu</div>
+      <p class="card-desc" data-tr="Tekrarlayan İK süreçlerini otomatikleştirerek zamandan ve maliyetten tasarruf." data-en="Automate repetitive HR processes to save time and reduce costs.">Tekrarlayan İK süreçlerini otomatikleştirerek zamandan ve maliyetten tasarruf.</p>
+      <span class="card-tag" data-tr="Aylık Retainer" data-en="Monthly Retainer">Aylık Retainer</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="nasil">
+  <div class="reveal">
+    <div class="eyebrow" data-tr="Nasıl Çalışır" data-en="How It Works">Nasıl Çalışır</div>
+    <h2 class="section-title" data-tr="Basit, hızlı,<br>sonuç odaklı" data-en="Simple, fast,<br>results-driven">Basit, hızlı,<br>sonuç odaklı</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-line"></div>
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title" data-tr="Keşif Görüşmesi" data-en="Discovery Call">Keşif Görüşmesi</div>
+      <p class="step-desc" data-tr="Şirketinizin mevcut durumunu ve ihtiyaçlarını birlikte değerlendiriyoruz. Ücretsiz, bağlayıcı olmayan bir görüşme." data-en="We evaluate your company's current state and needs together. A free, non-binding conversation.">Şirketinizin mevcut durumunu ve ihtiyaçlarını birlikte değerlendiriyoruz. Ücretsiz, bağlayıcı olmayan bir görüşme.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-title" data-tr="Özel Teklif" data-en="Custom Proposal">Özel Teklif</div>
+      <p class="step-desc" data-tr="İhtiyacınıza özel kapsam ve fiyatlandırma ile size en uygun hizmet modelini belirliyoruz." data-en="We define the scope, pricing, and service model tailored to your specific needs.">İhtiyacınıza özel kapsam ve fiyatlandırma ile size en uygun hizmet modelini belirliyoruz.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-title" data-tr="Uygulama &amp; Sonuç" data-en="Execution &amp; Results">Uygulama &amp; Sonuç</div>
+      <p class="step-desc" data-tr="Belirlenen takvimde, net çıktılarla çalışmaya başlıyoruz. Şeffaf iletişim, ölçülebilir sonuçlar." data-en="We start working within the agreed timeline with clear deliverables. Transparent communication, measurable outcomes.">Belirlenen takvimde, net çıktılarla çalışmaya başlıyoruz. Şeffaf iletişim, ölçülebilir sonuçlar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="hakkimizda">
+  <div class="about-content">
+    <div class="reveal">
+      <div class="eyebrow" data-tr="Hakkımızda" data-en="About">Hakkımızda</div>
+      <h2 class="section-title" style="margin-bottom:40px" data-tr="Neden Loom People?" data-en="Why Loom People?">Neden Loom People?</h2>
+    </div>
+    <div class="reveal">
+      <p data-tr="<strong>Loom People</strong>, şirketlerin büyüme yolculuğunda insan ve organizasyon yapılarını daha akıllı, daha sade ve daha sürdürülebilir hale getirmek için kurulmuş yeni nesil bir HR danışmanlık yaklaşımıdır." data-en="<strong>Loom People</strong> is a next-generation HR consulting approach founded to make people and organizational structures smarter, leaner, and more sustainable throughout a company's growth journey."><strong>Loom People</strong>, şirketlerin büyüme yolculuğunda insan ve organizasyon yapılarını daha akıllı, daha sade ve daha sürdürülebilir hale getirmek için kurulmuş yeni nesil bir HR danışmanlık yaklaşımıdır.</p>
+      <p data-tr="Bugünün şirketleri hızlı hareket etmek zorunda. Bu hızda, klasik ve ağır İK yapıları çoğu zaman işin önünü açmak yerine yavaşlatır. Loom People olarak odağımız; şirketlerin ihtiyaç duyduğu HR yapılarını gereksiz karmaşıklık yaratmadan, pratik ve uygulanabilir şekilde kurmak ve geliştirmek." data-en="Today's companies need to move fast. At that pace, heavy traditional HR structures often slow things down instead of enabling growth. Our focus at Loom People is to build and develop the HR structures companies need — practically, without unnecessary complexity.">Bugünün şirketleri hızlı hareket etmek zorunda. Bu hızda, klasik ve ağır İK yapıları çoğu zaman işin önünü açmak yerine yavaşlatır. Loom People olarak odağımız; şirketlerin ihtiyaç duyduğu HR yapılarını gereksiz karmaşıklık yaratmadan, pratik ve uygulanabilir şekilde kurmak ve geliştirmek.</p>
+      <p data-tr="Start-up'lardan kurumsallaşma sürecindeki şirketlere, HR departmanı olmayan ya da mevcut yapısını dönüştürmek isteyen organizasyonlara kadar geniş bir yelpazede çalışıyoruz. Her şirketin ihtiyacının farklı olduğunun farkındayız; bu yüzden standart çözümler yerine, <strong>ihtiyaca özel ve esnek yaklaşımlar</strong> benimsiyoruz." data-en="We work with a wide range of organizations — from startups to companies undergoing institutionalization, from businesses without an HR department to those looking to transform their existing structure. We know every company is different, so instead of off-the-shelf solutions we take <strong>tailored, flexible approaches</strong>.">Start-up'lardan kurumsallaşma sürecindeki şirketlere, HR departmanı olmayan ya da mevcut yapısını dönüştürmek isteyen organizasyonlara kadar geniş bir yelpazede çalışıyoruz. Her şirketin ihtiyacının farklı olduğunun farkındayız; bu yüzden standart çözümler yerine, <strong>ihtiyaca özel ve esnek yaklaşımlar</strong> benimsiyoruz.</p>
+    </div>
+    <div class="quote reveal">
+      <p data-tr='"Amacımız net: Şirketlerin doğru insanlarla, doğru yapı içinde ve sürdürülebilir bir şekilde büyümesini sağlamak."' data-en='"Our goal is clear: to help companies grow with the right people, within the right structure, in a sustainable way."'>"Amacımız net: Şirketlerin doğru insanlarla, doğru yapı içinde ve sürdürülebilir bir şekilde büyümesini sağlamak."</p>
+      <div class="quote-author">
+        <div class="quote-avatar">LP</div>
+        <div>
+          <div style="font-size:14px;font-weight:500">Loom People</div>
+          <div style="font-size:12px;color:var(--ink-muted)" data-tr="Yeni Nesil HR Danışmanlık" data-en="Next-Gen HR Consulting">Yeni Nesil HR Danışmanlık</div>
+        </div>
       </div>
-      <div class="field">
-        <label class="field-label" for="nt-company">Şirket adı</label>
-        <input class="form-input" type="text" id="nt-company" name="company" placeholder="Startup A.Ş." required />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="iletisim">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-eyebrow" data-tr="İletişim" data-en="Contact">İletişim</div>
+      <h2 class="contact-title" data-tr="Hadi bir<br>görüşelim." data-en="Let's have<br>a conversation.">Hadi bir<br>görüşelim.</h2>
+      <p class="contact-desc" data-tr="Şirketinizin İK ihtiyaçlarını konuşmak için zaman ayırın. Ücretsiz keşif görüşmesinde ne yapabileceğimizi birlikte değerlendirelim." data-en="Set aside time to talk about your company's HR needs. Let's explore what we can build together in a free discovery call.">Şirketinizin İK ihtiyaçlarını konuşmak için zaman ayırın. Ücretsiz keşif görüşmesinde ne yapabileceğimizi birlikte değerlendirelim.</p>
+      <div class="contact-info"><span>📍</span><span><strong>İstanbul, Türkiye</strong> — <span data-tr="Remote çalışma mevcut" data-en="Remote available">Remote çalışma mevcut</span></span></div>
+      <div class="contact-info"><span>📧</span><strong>hello@loompeople.com</strong></div>
+    </div>
+    <form id="contactForm" class="reveal" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="22d39b91-4af9-48b5-acb2-b68653eb1fd3"/>
+      <input type="hidden" name="subject" value="Loom People — Yeni İletişim Mesajı"/>
+      <input type="checkbox" name="botcheck" style="display:none"/>
+      <div class="form-row two">
+        <div>
+          <label class="form-label" data-tr="Adınız" data-en="Your Name">Adınız</label>
+          <input class="form-input" type="text" name="name" data-tr-placeholder="Can Yılmaz" data-en-placeholder="Jane Smith" placeholder="Can Yılmaz" required />
+        </div>
+        <div>
+          <label class="form-label" data-tr="Şirket" data-en="Company">Şirket</label>
+          <input class="form-input" type="text" name="company" data-tr-placeholder="Startup A.Ş." data-en-placeholder="Startup Inc." placeholder="Startup A.Ş." />
+        </div>
       </div>
-    </div>
-
-    <!-- E-posta -->
-    <div class="field reveal">
-      <label class="field-label" for="nt-email">E-posta</label>
-      <input class="form-input" type="email" id="nt-email" name="email" placeholder="hello@startup.com" required />
-    </div>
-
-    <hr class="form-divider">
-
-    <!-- Aşama -->
-    <div class="field reveal">
-      <label class="field-label">Şirketiniz şu an hangi aşamada?</label>
-      <div class="options inline">
-        <label class="opt-label"><input type="radio" name="stage" value="Pre-seed / Seed" required> Pre-seed / Seed</label>
-        <label class="opt-label"><input type="radio" name="stage" value="Seri A"> Seri A</label>
-        <label class="opt-label"><input type="radio" name="stage" value="Seri B+"> Seri B+</label>
-        <label class="opt-label"><input type="radio" name="stage" value="Bootstrapped"> Bootstrapped</label>
+      <div class="form-row">
+        <div>
+          <label class="form-label" data-tr="E-posta" data-en="Email">E-posta</label>
+          <input class="form-input" type="email" name="email" placeholder="hello@startup.com" required />
+        </div>
       </div>
-    </div>
-
-    <!-- Ekip büyüklüğü -->
-    <div class="field reveal">
-      <label class="field-label">Kaç kişilik ekibiniz var?</label>
-      <div class="options inline">
-        <label class="opt-label"><input type="radio" name="team_size" value="1–10" required> 1–10</label>
-        <label class="opt-label"><input type="radio" name="team_size" value="11–25"> 11–25</label>
-        <label class="opt-label"><input type="radio" name="team_size" value="26–50"> 26–50</label>
-        <label class="opt-label"><input type="radio" name="team_size" value="50+"> 50+</label>
+      <div class="form-row">
+        <div>
+          <label class="form-label" data-tr="İlgilendiğiniz Hizmet" data-en="Service of Interest">İlgilendiğiniz Hizmet</label>
+          <select class="form-select" name="service" required>
+            <option value="" disabled selected data-tr="Seçiniz" data-en="Select one">Seçiniz</option>
+            <option data-tr="HR Check-up" data-en="HR Check-up">HR Check-up</option>
+            <option data-tr="HR Set-up" data-en="HR Set-up">HR Set-up</option>
+            <option data-tr="Bütçe &amp; Ücret Yapılandırması" data-en="Budget &amp; Compensation Design">Bütçe &amp; Ücret Yapılandırması</option>
+            <option data-tr="İşe Alım" data-en="Recruitment">İşe Alım</option>
+            <option data-tr="Retainer Danışmanlık" data-en="Retainer Consulting">Retainer Danışmanlık</option>
+            <option data-tr="Henüz bilmiyorum" data-en="Not sure yet">Henüz bilmiyorum</option>
+          </select>
+        </div>
       </div>
-    </div>
-
-    <!-- İşe alım -->
-    <div class="field reveal">
-      <label class="field-label">Son 6 ayda işe alım yaptınız mı?</label>
-      <div class="options">
-        <label class="opt-label"><input type="radio" name="hiring" value="Evet, aktif olarak alıyoruz" required> Evet, aktif olarak alıyoruz</label>
-        <label class="opt-label"><input type="radio" name="hiring" value="Evet, ama zorlandık"> Evet, ama zorlandık</label>
-        <label class="opt-label"><input type="radio" name="hiring" value="Hayır, planlamıyoruz"> Hayır, planlamıyoruz</label>
-        <label class="opt-label"><input type="radio" name="hiring" value="Hayır, ama yakında planlıyoruz"> Hayır, ama yakında planlıyoruz</label>
+      <div class="form-row">
+        <div>
+          <label class="form-label" data-tr="Mesajınız" data-en="Message">Mesajınız</label>
+          <textarea class="form-textarea" name="message" rows="4" data-tr-placeholder="Şirketinizden ve İK ihtiyaçlarınızdan kısaca bahseder misiniz?" data-en-placeholder="Tell us briefly about your company and HR needs." placeholder="Şirketinizden ve İK iltiyaçlarınızdan kısaca bahseder misiniz?"></textarea>
+        </div>
       </div>
-    </div>
-
-    <!-- Mevcut İK yapısı -->
-    <div class="field reveal">
-      <label class="field-label">Şu an bir İK çalışanınız veya süreciniz var mı?</label>
-      <div class="options">
-        <label class="opt-label"><input type="radio" name="hr_status" value="Tam zamanlı İK ekibi var" required> Tam zamanlı İK ekibi var</label>
-        <label class="opt-label"><input type="radio" name="hr_status" value="Kısmi / freelance destek alıyoruz"> Kısmi / freelance destek alıyoruz</label>
-        <label class="opt-label"><input type="radio" name="hr_status" value="Hayır, kurucu olarak ben yürütüyorum"> Hayır, kurucu olarak ben yürütüyorum</label>
-        <label class="opt-label"><input type="radio" name="hr_status" value="Hayır, kimse yürütmüyor"> Hayır, kimse yürütmüyor</label>
-      </div>
-    </div>
-
-    <!-- Gündem konuları -->
-    <div class="field reveal">
-      <label class="field-label">Şu an gündeminizdeki konular <span>(birden fazla seçebilirsiniz)</span></label>
-      <div class="options">
-        <label class="opt-label"><input type="checkbox" name="topics" value="Maaş ve yan haklar yapısı"> Maaş &amp; yan haklar yapısı</label>
-        <label class="opt-label"><input type="checkbox" name="topics" value="İşe alım süreci"> İşe alım süreci</label>
-        <label class="opt-label"><input type="checkbox" name="topics" value="Performans değerlendirme"> Performans değerlendirme</label>
-        <label class="opt-label"><input type="checkbox" name="topics" value="İşten çıkarma / offboarding"> İşten çıkarma / offboarding</label>
-        <label class="opt-label"><input type="checkbox" name="topics" value="Roller ve sorumluluklar"> Ekip içi roller &amp; sorumluluklar</label>
-        <label class="opt-label"><input type="checkbox" name="topics" value="Çalışan memnuniyeti / tutundurma"> Çalışan memnuniyeti &amp; tutundurma</label>
-      </div>
-    </div>
-
-    <hr class="form-divider">
-
-    <!-- Açık soru -->
-    <div class="field reveal">
-      <label class="field-label" for="nt-pain">Şu an İK tarafında sizi en çok zorlayan nedir? <span>(birkaç cümle yeterli)</span></label>
-      <textarea class="form-textarea" id="nt-pain" name="main_challenge" placeholder="Aklınıza geleni yazın — doğru ya da yanlış cevap yok." rows="4"></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn reveal" id="submitBtn">Başvuruyu Gönder →</button>
-    <p class="form-note">Formu aldıktan sonra 48 saat içinde size ulaşıp görüşme zamanını birlikte belirleriz.</p>
-  </form>
-</div>
+      <button type="submit" class="submit-btn" id="submitBtn" data-tr="Mesaj Gönder →" data-en="Send Message →" data-tr-success="✓ Mesajınız Alındı" data-en-success="✓ Message Received">Mesaj Gönder →</button>
+      <p class="form-note" data-tr="48 saat içinde geri dönüş sağlanır." data-en="We'll get back to you within 48 hours.">48 saat içinde geri dönüş sağlanır.</p>
+    </form>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <a href="index.html" class="logo light">
+  <a href="#" class="logo light">
     <span class="loom">Loom</span><span class="people">People</span><span class="dot"></span>
   </a>
-  <div class="copy">© <span id="yr"></span> Loom People. Tüm hakları saklıdır.</div>
+  <div class="copy">© <span id="yr"></span> Loom People. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></div>
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Lang system
+  let currentLang = 'tr';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+    document.querySelectorAll('[data-tr]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (!val) return;
+      if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'P') el.innerHTML = val;
+      else el.textContent = val;
+    });
+    document.querySelectorAll('[data-tr-placeholder]').forEach(el => {
+      const val = el.getAttribute('data-' + lang + '-placeholder');
+      if (val) el.placeholder = val;
+    });
+    document.querySelectorAll('select option[data-tr]').forEach(o => {
+      const val = o.getAttribute('data-' + lang);
+      if (val) o.textContent = val;
+    });
+    document.documentElement.lang = lang;
+  }
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
@@ -334,27 +481,13 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Form submit
-  document.getElementById('nabizForm').addEventListener('submit', async (e) => {
+  // Form
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     const form = e.target;
-
-    // Collect checkbox values into a readable string
-    const checked = [...form.querySelectorAll('input[name="topics"]:checked')].map(i => i.value);
-    // Add as hidden field
-    let topicsHidden = form.querySelector('input[name="topics_summary"]');
-    if (!topicsHidden) {
-      topicsHidden = document.createElement('input');
-      topicsHidden.type = 'hidden';
-      topicsHidden.name = 'topics_summary';
-      form.appendChild(topicsHidden);
-    }
-    topicsHidden.value = checked.length ? checked.join(', ') : 'Belirtilmedi';
-
     btn.disabled = true;
     btn.textContent = '...';
-
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -363,17 +496,17 @@
       });
       if (res.ok) {
         btn.classList.add('success');
-        btn.textContent = '✓ Başvurunuz Alındı';
+        btn.textContent = btn.getAttribute('data-' + currentLang + '-success');
         form.reset();
       } else {
         btn.disabled = false;
-        btn.textContent = 'Başvuruyu Gönder →';
-        alert('Bir hata oluştu, lütfen tekrar deneyin.');
+        btn.textContent = btn.getAttribute('data-' + currentLang);
+        alert(currentLang === 'tr' ? 'Bir hata oluştu, lütfen tekrar deneyin.' : 'Something went wrong, please try again.');
       }
     } catch {
       btn.disabled = false;
-      btn.textContent = 'Başvuruyu Gönder →';
-      alert('Bağlantı hatası, lütfen tekrar deneyin.');
+      btn.textContent = btn.getAttribute('data-' + currentLang);
+      alert(currentLang === 'tr' ? 'Bağlantı hatası, lütfen tekrar deneyin.' : 'Connection error, please try again.');
     }
   });
 </script>
